@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Audio Player</string>
+    <string name="voice_mode_on">Voice Mode - ON</string>
+    <string name="voice_mode_off">Voice Mode - OFF</string>
 </resources>

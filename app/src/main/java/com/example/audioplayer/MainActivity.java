@@ -3,8 +3,11 @@ package com.example.audioplayer;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -92,8 +95,24 @@ public class MainActivity extends AppCompatActivity {
             items[counter] = audioFiles.get(counter).getName();
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainActivity.this,android.R.layout.simple_list_item_1,items);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(MainActivity.this,android.R.layout.simple_list_item_1,items);
         audioList.setAdapter(adapter);
+
+        audioList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l)
+            {
+                String audioName = audioList.getItemAtPosition(i).toString();
+
+                Intent intent = new Intent(MainActivity.this,AudioPlayerActivity.class);
+                intent.putExtra("audio",audioFiles);
+                intent.putExtra("name",audioName);
+                intent.putExtra("position",i);
+                startActivity(intent);
+
+
+            }
+        });
 
     }
 

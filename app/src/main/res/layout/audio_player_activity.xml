@@ -8,6 +8,101 @@
     android:layout_height="match_parent"
     tools:context=".AudioPlayerActivity">
 
+    <RelativeLayout
+        android:id="@+id/upper_relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+
+        >
+        <ImageView
+            android:id="@+id/audio_poster"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"/>
+
+        <TextView
+            android:id="@+id/audio_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/audio_poster"
+            android:textStyle="bold|italic"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp"
+            android:layout_marginTop="5dp"
+            android:singleLine="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:ellipsize="marquee"
+                />
+
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/lower_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_below="@+id/upper_relative_layout"
+        android:layout_above="@+id/input"
+        android:visibility="invisible"
+
+        >
+        <ImageView
+            android:id="@+id/previous_btn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:src="@drawable/previous"
+
+            />
+        <ImageView
+            android:id="@+id/play_pause_btn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pause"
+
+            />
+        <ImageView
+            android:id="@+id/next_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/next"
+
+            />
+
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/voice_enable_btn"
+        android:layout_marginBottom="15dp"
+        android:layout_marginStart="15dp"
+        android:src="@drawable/microphone"
+        app:backgroundTint="@android:color/white"
+
+        />
+    <Button
+        android:id="@+id/voice_enable_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="15dp"
+        android:text="@string/voice_mode_on"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        />
+
+
 
 
 </RelativeLayout>
